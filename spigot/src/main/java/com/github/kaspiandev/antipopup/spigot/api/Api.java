@@ -39,7 +39,7 @@ public class Api {
                     }
                     ConsoleMessages.log(ConsoleMessages.SETUP_SUCCESS, getLogger()::warning);
                     AntiPopup.getFoliaLib().getImpl().runLater(() -> {
-                        PacketEvents.getAPI().terminate();
+//                        PacketEvents.getAPI().terminate();
                         getServer().spigot().restart();
                     }, time * 50L, TimeUnit.MILLISECONDS);
                 } else if (!silent) {

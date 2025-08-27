@@ -4,17 +4,17 @@ import com.github.kaspiandev.antipopup.config.APConfig;
 import com.github.kaspiandev.antipopup.listener.PacketEventsListener;
 import com.github.kaspiandev.antipopup.log.LogFilter;
 import com.github.kaspiandev.antipopup.message.ConsoleMessages;
-import com.github.kaspiandev.antipopup.nms.v1_19_2.PlayerInjector_v1_19_2;
-import com.github.kaspiandev.antipopup.nms.v1_19_3.PlayerInjector_v1_19_3;
-import com.github.kaspiandev.antipopup.nms.v1_19_4.PlayerInjector_v1_19_4;
-import com.github.kaspiandev.antipopup.nms.v1_20_1.PlayerInjector_v1_20_1;
-import com.github.kaspiandev.antipopup.nms.v1_20_2.PlayerInjector_v1_20_2;
-import com.github.kaspiandev.antipopup.nms.v1_20_4.PlayerInjector_v1_20_4;
-import com.github.kaspiandev.antipopup.nms.v1_20_6.PlayerInjector_v1_20_6;
-import com.github.kaspiandev.antipopup.nms.v1_21.PlayerInjector_v1_21;
-import com.github.kaspiandev.antipopup.nms.v1_21_2.PlayerInjector_v1_21_2;
-import com.github.kaspiandev.antipopup.nms.v1_21_4.PlayerInjector_v1_21_4;
-import com.github.kaspiandev.antipopup.nms.v1_21_5.PlayerInjector_v1_21_5;
+//import com.github.kaspiandev.antipopup.nms.v1_19_2.PlayerInjector_v1_19_2;
+//import com.github.kaspiandev.antipopup.nms.v1_19_3.PlayerInjector_v1_19_3;
+//import com.github.kaspiandev.antipopup.nms.v1_19_4.PlayerInjector_v1_19_4;
+//import com.github.kaspiandev.antipopup.nms.v1_20_1.PlayerInjector_v1_20_1;
+//import com.github.kaspiandev.antipopup.nms.v1_20_2.PlayerInjector_v1_20_2;
+//import com.github.kaspiandev.antipopup.nms.v1_20_4.PlayerInjector_v1_20_4;
+//import com.github.kaspiandev.antipopup.nms.v1_20_6.PlayerInjector_v1_20_6;
+//import com.github.kaspiandev.antipopup.nms.v1_21.PlayerInjector_v1_21;
+//import com.github.kaspiandev.antipopup.nms.v1_21_2.PlayerInjector_v1_21_2;
+//import com.github.kaspiandev.antipopup.nms.v1_21_4.PlayerInjector_v1_21_4;
+//import com.github.kaspiandev.antipopup.nms.v1_21_5.PlayerInjector_v1_21_5;
 import com.github.kaspiandev.antipopup.nms.v1_21_6.PlayerInjector_v1_21_6;
 import com.github.kaspiandev.antipopup.spigot.api.Api;
 import com.github.kaspiandev.antipopup.spigot.hook.HookManager;
@@ -68,9 +68,9 @@ public final class AntiPopup extends JavaPlugin {
     @Override
     public void onLoad() {
         instance = this;
-        PacketEvents.setAPI(SpigotPacketEventsBuilder.build(this));
-        PacketEvents.getAPI().getSettings().debug(false).checkForUpdates(false);
-        PacketEvents.getAPI().load();
+//        PacketEvents.setAPI(SpigotPacketEventsBuilder.build(this));
+//        PacketEvents.getAPI().getSettings().debug(false).checkForUpdates(false);
+//        PacketEvents.getAPI().load();
         getLogger().info("Loaded PacketEvents.");
     }
 
@@ -110,7 +110,7 @@ public final class AntiPopup extends JavaPlugin {
         }
 
         PacketEvents.getAPI().getEventManager().registerListener(new PacketEventsListener(spigotPlatform), PacketListenerPriority.LOW);
-        PacketEvents.getAPI().init();
+//        PacketEvents.getAPI().init();
         getLogger().info("Initiated PacketEvents.");
 
         if (config.isBlockChatReports()
@@ -124,17 +124,17 @@ public final class AntiPopup extends JavaPlugin {
             if (!config.isExperimentalMode()) {
                 PlayerListener playerListener = switch (serverManager.getVersion()) {
                     case V_1_21_6, V_1_21_7, V_1_21_8 -> new PlayerListener(new PlayerInjector_v1_21_6());
-                    case V_1_21_5 -> new PlayerListener(new PlayerInjector_v1_21_5());
-                    case V_1_21_4 -> new PlayerListener(new PlayerInjector_v1_21_4());
-                    case V_1_21_2, V_1_21_3 -> new PlayerListener(new PlayerInjector_v1_21_2());
-                    case V_1_21, V_1_21_1 -> new PlayerListener(new PlayerInjector_v1_21());
-                    case V_1_20_5, V_1_20_6 -> new PlayerListener(new PlayerInjector_v1_20_6());
-                    case V_1_20_3, V_1_20_4 -> new PlayerListener(new PlayerInjector_v1_20_4());
-                    case V_1_20_2 -> new PlayerListener(new PlayerInjector_v1_20_2());
-                    case V_1_20, V_1_20_1 -> new PlayerListener(new PlayerInjector_v1_20_1());
-                    case V_1_19_4 -> new PlayerListener(new PlayerInjector_v1_19_4());
-                    case V_1_19_3 -> new PlayerListener(new PlayerInjector_v1_19_3());
-                    case V_1_19_1, V_1_19_2 -> new PlayerListener(new PlayerInjector_v1_19_2());
+//                    case V_1_21_5 -> new PlayerListener(new PlayerInjector_v1_21_5());
+//                    case V_1_21_4 -> new PlayerListener(new PlayerInjector_v1_21_4());
+//                    case V_1_21_2, V_1_21_3 -> new PlayerListener(new PlayerInjector_v1_21_2());
+//                    case V_1_21, V_1_21_1 -> new PlayerListener(new PlayerInjector_v1_21());
+//                    case V_1_20_5, V_1_20_6 -> new PlayerListener(new PlayerInjector_v1_20_6());
+//                    case V_1_20_3, V_1_20_4 -> new PlayerListener(new PlayerInjector_v1_20_4());
+//                    case V_1_20_2 -> new PlayerListener(new PlayerInjector_v1_20_2());
+//                    case V_1_20, V_1_20_1 -> new PlayerListener(new PlayerInjector_v1_20_1());
+//                    case V_1_19_4 -> new PlayerListener(new PlayerInjector_v1_19_4());
+//                    case V_1_19_3 -> new PlayerListener(new PlayerInjector_v1_19_3());
+//                    case V_1_19_1, V_1_19_2 -> new PlayerListener(new PlayerInjector_v1_19_2());
                     default -> throw new IllegalStateException("No valid injector found for the server version!");
                 };
 
@@ -180,7 +180,7 @@ public final class AntiPopup extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        PacketEvents.getAPI().terminate();
+//        PacketEvents.getAPI().terminate();
         getLogger().info("Disabled PacketEvents.");
     }
 
